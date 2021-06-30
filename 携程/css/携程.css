@@ -1,0 +1,281 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	min-width: 320px;
+	max-width: 540px;
+	margin: 0 auto;
+}
+.layout{
+	width: 100%;
+	background: #f2f2f2;
+}
+nav{
+	height: 50px;
+	display: flex;
+	margin: 5px;
+}
+nav input{
+	flex: 1;
+	border: 1px solid #666;
+	margin: 5px;
+	border-radius: 10px;
+	box-shadow: 0px 2px 4px #666;
+	padding-left: 30px;
+}
+nav a{
+	width: 50px;
+	height: 50px;
+}
+nav  a span{
+	width: 100%;
+	height: 10px;
+	color: #2eaae0;
+	line-height: 10px;
+	text-align: center;
+	font-size: .86em;
+}
+nav a::before{
+	content: "";
+	display: block;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background: url(../images/xiecheng.png) -124px -395px no-repeat;
+}
+header{
+	padding:5px;
+	width: 100%;
+}
+header img{
+	width: 100%;
+	border-radius: 8px;
+}
+.menu{
+	width: 100%;
+	background: white;
+	border-radius: 8px;
+}
+.menu ul{
+	display: flex;
+	justify-content: space-between;
+	padding:5px 15px;
+}
+.menu ul li{
+
+}
+.menu ul li a span{
+	font-size: 12px;
+	color: #222;
+	display: block;
+}
+.tu,.tu1,.tu2,.tu3,.tu4{
+	width: 32px;
+	height: 32px;
+	display: block;
+	border-radius: 50%;
+}
+.tu{
+	background: url(../images/xiecheng2.png) 0px 3px no-repeat;
+	background-size: 32px auto;
+}
+.tu1{
+	background: url(../images/xiecheng2.png) 0px -32px no-repeat;
+	background-size: 32px auto;
+}
+.tu2{
+	background: url(../images/xiecheng2.png) 0px -64px no-repeat;
+	background-size: 32px auto;
+}
+.tu3{
+	background: url(../images/xiecheng2.png) 0px -96px no-repeat;
+	background-size: 32px auto;
+}
+.tu4{
+	background: url(../images/xiecheng2.png) 0px -129px no-repeat;
+	background-size: 32px auto;
+}
+.main{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+}
+.main section{
+	flex: 1;
+	width: 100%;
+	height: 90px;
+	background: orange;
+	margin:3px;
+	display: flex;
+	justify-content: space-between;
+}
+.main section:nth-of-type(1){
+	border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: -webkit-linear-gradient(right,#fa5956,#fa9b4d);
+}
+.main section span{
+	display: block;
+	width: 100%;
+	border: 1px solid #fff;
+}
+.main section:nth-of-type(2){
+	border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: -webkit-linear-gradient( right,#4b8fed,#53bced);
+}
+.main section:nth-of-type(3){
+	border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: -webkit-linear-gradient( right,#34c2aa,#6cd557);
+}
+.djd,.jd{
+	width: 100%;
+	height: 34px;
+	display: block;
+	line-height: 34px;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+}
+.jd{
+	border-bottom: 1px solid #fff;
+}
+.first span:nth-of-type(1){
+	background:url(../images/xiecheng3.png) center bottom no-repeat;
+	background-size: 121px auto;
+}
+.second span:nth-of-type(1){
+	background:url(../images/xiecheng4.png) center bottom no-repeat;
+	background-size: 121px auto;
+}
+.third span:nth-of-type(1){
+	background:url(../images/xiecheng5.png) center bottom no-repeat;
+	background-size: 121px auto;
+}
+.foot,.foot1{
+	display: flex;
+}
+.foot,.foot1{
+	flex: 1;
+}
+.foot li a span,.foot1 li a span{
+	font-size: 12px;
+	color: #222;
+	text-align: center;
+	margin: 0 auto;
+}
+.pic1,.pic2,.pic3,.pic4,.pic5,.pic6,.pic7,.pic8,.pic9,.pic10{
+	width: 28px;
+	height: 28px;
+	display: block;
+	margin-left: 10px;
+}
+.pic1{
+	background:url(../images/xiecheng6.png) 0 0 no-repeat ;
+	background-size: 28px auto;
+}
+.pic2{
+	background:url(../images/xiecheng6.png) 0 -30px no-repeat ;
+	background-size: 28px auto;
+}
+.pic3{
+	background:url(../images/xiecheng6.png) 0 -66px no-repeat ;
+	background-size: 28px auto;
+}
+.pic4{
+	background:url(../images/xiecheng6.png) 0 -99px no-repeat ;
+	background-size: 28px auto;
+}
+.pic5{
+	background:url(../images/xiecheng6.png) 0 -132px no-repeat ;
+	background-size: 28px auto;
+}
+.pic6{
+	background:url(../images/xiecheng6.png) 0 -165px no-repeat ;
+	background-size: 28px auto;
+}
+.pic7{
+	background:url(../images/xiecheng6.png) 0 -198px no-repeat ;
+	background-size: 28px auto;
+}
+.pic8{
+	background:url(../images/xiecheng6.png) 0 -257px no-repeat ;
+	background-size: 28px auto;
+}
+.pic9{
+	background:url(../images/xiecheng6.png) 0 -287px no-repeat ;
+	background-size: 28px auto;
+}
+.pic10{
+	background:url(../images/xiecheng6.png) 0 -132px no-repeat ;
+	background-size: 28px auto;
+}
+.foot1{
+	margin-left: 15px;
+}
+footer{
+	width: 100%;
+	height: 70px;
+	margin-top: 10px;
+	display: flex;
+	box-shadow: 0px -2px 4px #666;
+}
+footer a{
+	display: block;
+	flex: 1;
+	margin-top: 10px;
+}
+footer span{
+	display: block;
+	width: 16px;
+	height: 17px;
+	margin: 0 auto;
+}
+.one{
+	background: url(../images/xiecheng.png) no-repeat 0 0;
+    background-position: -60px -153px;
+    background-size: 104px 326px;   
+}
+.two{
+	background: url(../images/xiecheng.png) no-repeat 0 0;
+    background-position: -60px -173px;
+    background-size: 104px 326px;   
+}
+.three{
+	background: url(../images/xiecheng.png) no-repeat 0 0;
+    background-position: -60px -308px;
+    background-size: 104px 326px;   
+}
+footer p{
+	font-size: 12px;
+	color: #222;
+	text-align: center;
+	margin-top: 10px;
+}
+.last{
+	height: 20px;
+	width: 200px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+}
+.last a{
+	font-size: 12px;
+	color: #222;
+	line-height: 20px;
+	text-align: center;
+	border-right: 1px solid #222;
+	padding-right: 10px;
+}
+.llast{
+	font-size: 12px;
+	color: #222;
+	text-align: center;
+}
+
