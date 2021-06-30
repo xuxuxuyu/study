@@ -1,0 +1,10 @@
+const express = require('express')
+const router = express.Router()
+const service = require('./service.js')
+router.get('/',service.renderIndex)
+router.get('/toaddBook',service.toaddBook)
+router.post('/addBook',service.addBook)
+router.get('/toEditBook',service.toEditBook)
+router.post('/editBook',service.editBook)
+router.get('/deleteBook',service.deleteBook)
+module.exports = router

@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "name": "雾都孤儿",
+        "author": "查尔斯",
+        "category": "文学",
+        "disrction": "伦敦孤儿的悲惨遭遇",
+        "_locals": {}
+    },
+    {
+        "id": 2,
+        "name": "百年孤独",
+        "author": "加西亚-马尔克斯",
+        "category": "文学",
+        "disrction": "布恩迪亚家族七代人的传奇故事",
+        "_locals": {}
+    },
+    {
+        "id": 3,
+        "name": "汤姆叔叔的小屋",
+        "author": "比彻·斯托夫人",
+        "category": "小说",
+        "disrction": "汤姆的一生"
+    },
+    {
+        "id": 4,
+        "name": "小王子",
+        "author": "安托万-德-圣-埃克苏佩里",
+        "category": "文学",
+        "disrction": "小王子的故事"
+    },
+    {
+        "id": 5,
+        "name": "傲慢与偏见",
+        "author": "简-奥斯汀",
+        "category": "小说",
+        "disrction": "伊丽莎白的爱情故事",
+        "_locals": {}
+    },
+    {
+        "id": 6,
+        "name": "高级语言程序设计",
+        "author": "大佬徐",
+        "category": "课本",
+        "disrction": "敲代码的故事",
+        "_locals": {}
+    },
+    {
+        "name": "安徒生童话",
+        "author": "安徒生",
+        "category": "童话",
+        "disrction": "小孩子看的",
+        "id": 8
+    }
+]

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<style>
+		/*#id .navbar-light{
+			text-align:center;
+			color: #fff;
+		}*/
+		#d .form-inline{
+			padding: 10px;
+		}
+		.form-inline div{
+			padding: 20px;
+		}
+	</style>
+	<script src="vue.js"></script>
+	<script src="vue-resource.js"></script>
+</head>
+<body>
+	<div id="dv">
+		<nav id="nav" class="navbar navbar-light" style="background-color: pink;">
+  			<span class="navbar-brand mb-0 h1">都是水果</span>
+		</nav>
+		<form class="form-inline">
+			 <div class="form-group">
+			    <label>水果ID</label>
+			    <input type="text" class="form-control" v-model:value="fruId" placeholder="请输入水果ID">
+			  </div>
+			  <div class="form-group">
+			    <label>水果名字</label>
+			    <input type="text" class="form-control" v-model:value="fruName" placeholder="请输入水果名字"  @keyup.enter='add'>
+			    <!-- <input type="text" class="form-control" v-model:value="fruName" placeholder="请输入水果名字"  @keyup.f2='add'> -->
+			  </div>
+			  <button type="button" class="btn btn-warning" @click='add'>添加</button>
+			  <div class="form-group">
+			    <label>按关键字搜索</label>
+			    <input type="text" class="form-control" v-model:value="keyword" placeholder="请输入关键字">
+			  </div>
+		</form>
+		<table class="table">
+			<thead class="thead-dark">
+			    <tr>
+			      <th scope="col">水果id</th>
+			      <th scope="col">水果名字</th>
+			      <th scope="col">上线时间</th>
+			      <th scope="col">操作</th>
+			    </tr>
+			</thead>
+			<tbody>
+			    <tr v-for="val in search(keyword)" :key="val.id">
+				    <th scope="row">{{val.id}}</th>
+				    <td>{{val.name}}</td>
+				    <td>{{val.time | myFilter("yyyy-mm-dd h:m:s")}}</td>
+				    <td>
+				    	<button type="button" class="btn btn-warning" @click=del(val.id)>删除</button>
+				    </td>
+			    </tr>
+			</tbody>
+		</table>
+
+	</div>
+	<script>
+		// import axios from 'axios';
+		 // Vue.prototype.$http=axios
+		Vue.config.keyCodes.f2 = 113
+		Vue.filter('myFilter',(data,parren)=>{
+			var dt = new Date(data)
+			var y = dt.getFullYear()
+			var m = (dt.getMonth()+1).toString().padStart(2,'0')
+			var d = dt.getDate().toString().padStart(2,'0')
+			if(parren="yyyy-mm-dd"){
+				return `${y}-${m}-${d}`
+			}else{
+				var h = dt.getHours().toString().padStart(2,'0')
+				var m = dt.getMinutes().toString().padStart(2,'0')
+				var s = dt.getSeconds().toString().padStart(2,'0')
+				return `${y}-${m}-${d} ${h}:${m}:${s}`
+			}
+			
+		})
+		var vm = new Vue({
+			el:"#dv",
+			data:{
+				fruId : "",
+				fruName : '',
+				keyword:'',
+				list:[
+					{id:1,name:"苹果",time:new Date()},
+					{id:2,name:"香蕉",time:new Date()},
+					{id:3,name:"香瓜",time:new Date()},
+					{id:4,name:"西瓜",time:new Date()},
+				]
+			},
+			methods:{
+				add(){
+					axios.post('http://localhost:3001/message',{
+						id:this.fruId,
+						name:this.fruName,
+						time:"201900806"
+					})
+					.then(res=>{
+						this.getInfo()
+					})
+				},
+
+				del(id){
+					// this.$http.delete("http://localhost:3001/message/"+id).then(res=>{
+					// 	this.getInfo()
+					// },err=>{
+	
+					// })
+					axios.delete('http://localhost:3001/message/'+id)
+					.then(res=>{
+						this.getInfo()
+					})
+				},
+				search(keyword){
+					return  this.list.filter(item=>{
+				
+						return item.name.includes(keyword)
+					})
+				},
+				getInfo(){
+					axios.get('http://localhost:3001/message')
+					.then(res=>{
+						// console.log(res.data)
+						let arr=[]
+						res.data.forEach(item=>{
+							arr.push(item)
+						})
+						console.log(arr)
+						this.list = arr
+						console.log(this.list)
+					})
+					.catch(err=>{
+						console.log('页面suo')
+					})
+				},
+			},
+			created(){
+					this.getInfo()
+				}
+		})
+	</script>
+</body>
+</html>

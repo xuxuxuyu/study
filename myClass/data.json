@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1",
+        "name": "小A",
+        "age": "18",
+        "major": "数学",
+        "score": "100"
+    },
+    {
+        "id": "2",
+        "name": "小B",
+        "age": "18",
+        "major": "计算机",
+        "score": "100"
+    },
+    {
+        "id": "3",
+        "name": "小C",
+        "age": "18",
+        "major": "音乐",
+        "score": "100"
+    },
+    {
+        "id": "4",
+        "name": "小D",
+        "age": "18",
+        "major": "美术",
+        "score": "100"
+    },
+    {
+        "id": "5",
+        "name": "小E",
+        "age": "18",
+        "major": "音乐",
+        "score": "70"
+    },
+    {
+        "name": "小红",
+        "age": "18",
+        "major": "cdsdsv",
+        "score": "50",
+        "id": "6"
+    },
+    {
+        "name": "csc",
+        "age": "18",
+        "major": "36.",
+        "score": "100",
+        "id": 7
+    },
+    {
+        "name": "ngfnnnnnnnnnnnnnn",
+        "age": "20",
+        "major": "计算机",
+        "score": "10",
+        "id": "8"
+    },
+    {
+        "name": "小红",
+        "age": "100",
+        "major": "计算机",
+        "score": ".5.",
+        "id": "9"
+    }
+]

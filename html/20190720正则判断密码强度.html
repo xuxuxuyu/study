@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			margin: 100px auto;
+			border: 1px solid #ccc;
+			font-size: 16px;
+			text-align: center;
+			padding-top: 50px;
+		}
+		input{
+			width: 200px;
+			height: 20px;
+			margin-left: 5px;
+			font-size: 14px;
+		}
+		meter{
+			width: 200px;
+			height: 20px;
+			margin-top: 30px;
+			margin-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		密码<input type="password" name="" id="password" placeholder="请输入密码" maxlength="16"><br>
+	密码强度<meter id="meter" value="0" max="100" min="0" low="30" high="60" optimum="85"></meter>
+	</div>
+	<script>
+		var reg = {
+			regDif : /(\d+[a-z]+|[A-Z]+[!@#$])/,
+			regMid : /(\d+[a-z]|[A-Z])/,
+			regEasy1 : /\d+/
+		}
+		var input = document.getElementById('password')
+		var meter = document.getElementById('meter')
+		input.onkeyup = function(){
+			var res = check(this.value)
+			console.log(res)
+			switch(res){
+				case 'easy':
+					meter.value = 10
+					break;
+				case 'mid':
+					meter.value = 50
+					break;
+				case 'dif':
+					meter.value = 90
+			}
+		}
+		function check(value){
+			if(value.length < 5){
+				return 'easy'	
+			}else if(value.length > 14&&reg.regDif.test(value)){
+				return 'dif'
+			}else if(value.length > 10||reg.regMid.test(value)){
+				return 'mid'
+			}
+			else if(reg.regEasy1.test(value)){
+				return 'easy'
+			}
+		}
+	
+		//密码长度小于5、全是数字，密码强度弱
+		// 密码长度>10或者数字+字母 中等
+		//密码长度>14&&数字字母符号 强 
+
+
+		//渐变，两层div遮罩层覆盖
+	</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度换肤</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		/*img{
+			width: 100%;
+			height: 100%;
+		}*/
+		.clearfix:after {
+			content: "";
+			display: block;
+			clear: both;
+			height: 0px;
+		}
+
+		/*.big{
+			width: 1550px;
+			height: 800px;
+		}*/
+		.xuanze{
+			width: 200px;
+			height: 150px;
+			position: fixed;
+			background: white;
+			border-radius: 15px;
+			font-size: 20px;
+			font-family: "宋体";
+			text-align: center;
+		}
+		#chang{
+			display: block;
+			width: 600px;
+			height: 30px;
+			margin: 0 auto;
+			float: left;
+		}
+		#duan{			
+			width: 70px;
+			height: 34px;
+			margin-left: 1px;
+			background: skyblue;
+			}
+		.biaodan{
+			position: fixed;
+			left: 440px;
+			top: 200px;
+		}
+		.big{
+			background: yellow;
+			width: 1550px;
+			height: 800px;	
+			overflow: hidden;	
+		}
+		#dm,#fj,#dw,#hc,#xqx{
+			width: 1550px;
+			height: 800px;
+		}
+		#dm{
+			background: url(../images/dongman.jpg);
+		}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="xuanze">
+			<ul>选择你要换的皮肤
+				<a href="#dm"><li>动漫</li></a>
+				<a href="#fj"><li>风景</li></a>
+				<a href="#dw"><li>动物</li></a>
+				<a href="#hc"><li>豪车</li></a>
+				<a href="#xqx"><li>小清新</li></a>
+			</ul>
+		</div>
+
+		<div class="biaodan">
+			<form action="">
+				<input class="clearfix" id="chang" type="text" value="" placeholder="百度一下，你就知道">
+				<input class="clearfix" id="duan"type="submit" value="百度一下">
+			</form>
+		</div>
+
+
+		<img id="dm" src="../images/dongman.jpg" alt="">
+		<img id="fj" src="../images/fengjing.jpg" alt="">
+		<img id="dw" src="../images/gou.jpg" alt="">
+		<img id="hc" src="../images/haoche.jpg" alt="">
+		<img id="xqx" src="../images/xiaoqingxin.jpg" alt="">
+
+	</div>
+</body>
+</html>

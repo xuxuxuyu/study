@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Hello, world!</title>
+    <style>
+      h1{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>成绩管理系统</h1>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">添加</button>
+    <a href="/search" class="btn btn-warning">点击查询所有成绩</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">姓名</th>
+          <th scope="col">年龄</th>
+          <th scope="col">专业</th>
+          <th scope="col">成绩</th>
+          <th scope="col">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{each list}}
+        <tr>
+          <th scope="row">{{$value.id}}</th>
+          <td>{{$value.name}}</td>
+          <td>{{$value.age}}</td>
+          <td>{{$value.major}}</td>
+          <td>{{$value.score}}</td>
+          <td>
+                <button type="button" class="btn bg-info modBtn" data-toggle="modal" data-target="#exampleModal2" data-id="{{$value.id}}">修改</button>
+                <button type="button" class="btn bg-danger delBtn" data-toggle="modal" data-target="#exampleModal3"  data-id="{{$value.id}}">删除</button>
+        {{/each}}
+      </tbody>
+    </table>
+            <!-- 添加信息 -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">添加学生</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/add" method="POST">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="">姓名</label>
+                            <input type="text" name="name" class="form-control" placeholder="请输入姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="">年龄</label>
+                            <input type="text" name="age" class="form-control" placeholder="请输入年龄">
+                        </div>
+                        <div class="form-group">
+                            <label for="">专业</label>
+                            <input type="text" name="major" class="form-control" placeholder="请输入专业">
+                        </div>
+                        <div class="form-group">
+                            <label for="">成绩</label>
+                            <input type="text" name="score" class="form-control" placeholder="请输入总分数">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+            <!-- 修改信息 -->
+         <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">编辑学生信息</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/write" method="POST">
+                    <div class="modal-body">
+                        <input type="hidden" name="id" class="form-control" id="editid">
+                        <div class="form-group">
+                            <label for="">姓名</label>
+                            <input type="text" name="name" class="form-control" placeholder="请输入姓名" id="editname">
+                        </div>
+                        <div class="form-group">
+                            <label for="">年龄</label>
+                            <input type="text" name="age" class="form-control" placeholder="请输入年龄" id="editage">
+                        </div>
+                        <div class="form-group">
+                            <label for="">专业</label>
+                            <input type="text" name="major" class="form-control" placeholder="请输入专业" id="editmajor">
+                        </div>
+                        <div class="form-group">
+                            <label for="">总分数</label>
+                            <input type="text" name="score" class="form-control" placeholder="请输入总分数" id="editscore">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 删除信息 -->
+      <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">删除学生</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="id" id="delid" >
+                        <button type="submit" class="btn btn-primary">确认</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+         $('.modBtn').each(function()
+    {
+        $(this).click(function(){
+            let markId = this.getAttribute('data-id');
+            $.ajax({
+                type : 'get',
+                dataType : 'json',
+                url : '/towrite',
+                data : {"id":markId},
+                success : function(data)
+                {
+                    $('#editid').val(data.id);
+                    $('#editname').val(data.name);
+                    $('#editage').val(data.age);
+                    $('#editmajor').val(data.major);
+                    $('#editscore').val(data.score);
+                }
+            })
+        })
+    })
+    $('.delBtn').each(function(){
+        let markId = this.getAttribute('data-id');
+        $('#delid').val(markId);
+    })
+    </script>
+  </body>
+</html>
